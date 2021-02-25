@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<!--.███████╗██╗...██╗██████╗..██████╗ -->
+<!--.╚══███╔╝╚██╗.██╔╝██╔══██╗██╔═══██╗ -->
+<!--...███╔╝..╚████╔╝.██████╔╝██║...██║ -->
+<!--..███╔╝....╚██╔╝..██╔══██╗██║...██║ -->
+<!--.███████╗...██║...██║..██║╚██████╔╝ -->
+<!--.╚══════╝...╚═╝...╚═╝..╚═╝.╚═════╝ -->
+<!--.........We are hiring -->
+<!--.....https://zyro.com/career -->
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" href="data:;base64,=" />
+		<title>spausk.space</title>
+	</head>
+	<body>
+		<script>
+			const fartList = [
+				"/farts/Cheeky_Monkey.wav",
+				"/farts/Duck_Step.wav",
+				"/farts/Ducks_in_a_Row.wav",
+				"/farts/Dude_Wut.wav",
+				"/farts/Excuse me mistress.wav",
+				"/farts/FARTYPANT.wav",
+				"/farts/Good_Morning_Sally.wav",
+				"/farts/Good_morning_Jim.wav",
+				"/farts/Hooklineandstinker.wav",
+				"/farts/Kid Icarus hurt.wav",
+				"/farts/Magic_Mushroom.wav",
+				"/farts/NES_Tennis.wav",
+				"/farts/Oh_you.wav",
+				"/farts/Peter rabbits tail.wav",
+				"/farts/Ping_pong.wav",
+				"/farts/Rectal_fusion.wav",
+				"/farts/Steak_Diane.wav",
+				"/farts/The friendzone.wav",
+				"/farts/The spit take.wav",
+				"/farts/The_Cutesy_Poo.wav",
+				"/farts/The_Fart_and the Furious.wav",
+				"/farts/The_Fly.wav",
+				"/farts/The_Force.wav",
+				"/farts/The_Fresh_raspberry.wav",
+				"/farts/The_Gentlemans_Sneak.wav",
+				"/farts/The_Grunt.wav",
+				"/farts/The_Hard_swallow.wav",
+				"/farts/The_Jitterbug.wav",
+				"/farts/The_Mario_Jump.wav",
+				"/farts/The_Meatball.wav",
+				"/farts/The_Powdered_Toast.wav",
+				"/farts/The_Soft_Kiss.wav",
+				"/farts/The_Squeaker.wav",
+				"/farts/The_Strain.wav",
+				"/farts/The_Supressed_fire.wav",
+				"/farts/The_fairys_kiss.wav",
+				"/farts/The_turtles_secret.wav",
+				"/farts/Was that wet.wav",
+				"/farts/Wasp.wav",
+				"/farts/Wee_little_laddie.wav",
+				"/farts/Why_hello.wav",
+				"/farts/bouncy.wav",
+				"/farts/peck on the cheek.wav",
+			];
+			document.addEventListener("keydown", (event) => {
+				if (event.code === "Space") {
+					const minFartIndex = 0;
+					const maxFartIndex = fartList.length + 1;
+					const randomIndex = Math.floor(
+						Math.random() * (maxFartIndex - minFartIndex) + minFartIndex
+					);
+					const fart = new Audio(fartList[randomIndex]);
+					fart.play();
+				}
+			});
+		</script>
+	</body>
+</html>
