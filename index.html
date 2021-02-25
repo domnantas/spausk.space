@@ -18,60 +18,70 @@
 	<body>
 		<script>
 			const fartList = [
-				"/farts/Cheeky_Monkey.wav",
-				"/farts/Duck_Step.wav",
-				"/farts/Ducks_in_a_Row.wav",
-				"/farts/Dude_Wut.wav",
-				"/farts/Excuse me mistress.wav",
-				"/farts/FARTYPANT.wav",
-				"/farts/Good_Morning_Sally.wav",
-				"/farts/Good_morning_Jim.wav",
-				"/farts/Hooklineandstinker.wav",
-				"/farts/Kid Icarus hurt.wav",
-				"/farts/Magic_Mushroom.wav",
-				"/farts/NES_Tennis.wav",
-				"/farts/Oh_you.wav",
-				"/farts/Peter rabbits tail.wav",
-				"/farts/Ping_pong.wav",
-				"/farts/Rectal_fusion.wav",
-				"/farts/Steak_Diane.wav",
-				"/farts/The friendzone.wav",
-				"/farts/The spit take.wav",
-				"/farts/The_Cutesy_Poo.wav",
-				"/farts/The_Fart_and the Furious.wav",
-				"/farts/The_Fly.wav",
-				"/farts/The_Force.wav",
-				"/farts/The_Fresh_raspberry.wav",
-				"/farts/The_Gentlemans_Sneak.wav",
-				"/farts/The_Grunt.wav",
-				"/farts/The_Hard_swallow.wav",
-				"/farts/The_Jitterbug.wav",
-				"/farts/The_Mario_Jump.wav",
-				"/farts/The_Meatball.wav",
-				"/farts/The_Powdered_Toast.wav",
-				"/farts/The_Soft_Kiss.wav",
-				"/farts/The_Squeaker.wav",
-				"/farts/The_Strain.wav",
-				"/farts/The_Supressed_fire.wav",
-				"/farts/The_fairys_kiss.wav",
-				"/farts/The_turtles_secret.wav",
-				"/farts/Was that wet.wav",
-				"/farts/Wasp.wav",
-				"/farts/Wee_little_laddie.wav",
-				"/farts/Why_hello.wav",
-				"/farts/bouncy.wav",
-				"/farts/peck on the cheek.wav",
+				"/farts/Cheeky_Monkey.mp3",
+				"/farts/Duck_Step.mp3",
+				"/farts/Ducks_in_a_Row.mp3",
+				"/farts/Dude_Wut.mp3",
+				"/farts/Excuse me mistress.mp3",
+				"/farts/FARTYPANT.mp3",
+				"/farts/Good_Morning_Sally.mp3",
+				"/farts/Good_morning_Jim.mp3",
+				"/farts/Hooklineandstinker.mp3",
+				"/farts/Kid Icarus hurt.mp3",
+				"/farts/Magic_Mushroom.mp3",
+				"/farts/NES_Tennis.mp3",
+				"/farts/Oh_you.mp3",
+				"/farts/Peter rabbits tail.mp3",
+				"/farts/Ping_pong.mp3",
+				"/farts/Rectal_fusion.mp3",
+				"/farts/Steak_Diane.mp3",
+				"/farts/The friendzone.mp3",
+				"/farts/The spit take.mp3",
+				"/farts/The_Cutesy_Poo.mp3",
+				"/farts/The_Fart_and the Furious.mp3",
+				"/farts/The_Fly.mp3",
+				"/farts/The_Force.mp3",
+				"/farts/The_Fresh_raspberry.mp3",
+				"/farts/The_Gentlemans_Sneak.mp3",
+				"/farts/The_Grunt.mp3",
+				"/farts/The_Hard_swallow.mp3",
+				"/farts/The_Jitterbug.mp3",
+				"/farts/The_Mario_Jump.mp3",
+				"/farts/The_Meatball.mp3",
+				"/farts/The_Powdered_Toast.mp3",
+				"/farts/The_Soft_Kiss.mp3",
+				"/farts/The_Squeaker.mp3",
+				"/farts/The_Strain.mp3",
+				"/farts/The_Supressed_fire.mp3",
+				"/farts/The_fairys_kiss.mp3",
+				"/farts/The_turtles_secret.mp3",
+				"/farts/Was that wet.mp3",
+				"/farts/Wasp.mp3",
+				"/farts/Wee_little_laddie.mp3",
+				"/farts/Why_hello.mp3",
+				"/farts/bouncy.mp3",
+				"/farts/peck on the cheek.mp3",
 			];
+
+			const fartAudioList = fartList.map((path) => new Audio(path));
+
+			const playRandomFart = () => {
+				const minFartIndex = 0;
+				const maxFartIndex = fartList.length + 1;
+				const randomIndex = Math.floor(
+					Math.random() * (maxFartIndex - minFartIndex) + minFartIndex
+				);
+				fartAudioList[randomIndex].play();
+			};
+
 			document.addEventListener("keydown", (event) => {
 				if (event.code === "Space") {
-					const minFartIndex = 0;
-					const maxFartIndex = fartList.length + 1;
-					const randomIndex = Math.floor(
-						Math.random() * (maxFartIndex - minFartIndex) + minFartIndex
-					);
-					const fart = new Audio(fartList[randomIndex]);
-					fart.play();
+					playRandomFart();
 				}
+			});
+
+			document.addEventListener("touchstart", () => {
+				playRandomFart();
 			});
 		</script>
 	</body>
