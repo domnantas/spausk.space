@@ -72,6 +72,7 @@
 					Math.random() * (maxFartIndex - minFartIndex) + minFartIndex
 				);
 				fartAudioList[randomIndex].play();
+				plausible("Fart");
 			};
 
 			document.addEventListener("keydown", (event) => {
@@ -90,5 +91,12 @@
 			data-domain="spausk.space"
 			src="https://plausible.io/js/plausible.js"
 		></script>
+		<script>
+			window.plausible =
+				window.plausible ||
+				function () {
+					(window.plausible.q = window.plausible.q || []).push(arguments);
+				};
+		</script>
 	</body>
 </html>
