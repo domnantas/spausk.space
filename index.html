@@ -14,8 +14,32 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="icon" href="data:;base64,=" />
 		<title>spausk.space</title>
+		<style>
+			html {
+				background-color: #000;
+				height: 100vh;
+				display: grid;
+				place-items: center center;
+			}
+
+			.fart-text {
+				color: #fff;
+				letter-spacing: 2vw;
+				font-size: 20vw;
+				opacity: 0;
+				transition: transform 2s ease-out, opacity 1s ease;
+				transform: scale(0);
+			}
+
+			.show {
+				transition-duration: 0s;
+				opacity: 1;
+				transform: scale(1);
+			}
+		</style>
 	</head>
 	<body>
+		<h1 class="fart-text">pirst</h1>
 		<script>
 			const fartList = [
 				"/farts/Cheeky_Monkey.mp3",
@@ -65,6 +89,8 @@
 
 			const fartAudioList = fartList.map((path) => new Audio(path));
 
+			const fartTextEl = document.querySelector(".fart-text");
+
 			const playRandomFart = () => {
 				const minFartIndex = 0;
 				const maxFartIndex = fartList.length + 1;
@@ -72,6 +98,10 @@
 					Math.random() * (maxFartIndex - minFartIndex) + minFartIndex
 				);
 				fartAudioList[randomIndex].play();
+				fartTextEl.classList.add("show");
+				setTimeout(() => {
+					fartTextEl.classList.remove("show");
+				}, 0);
 				plausible("Fart");
 			};
 
